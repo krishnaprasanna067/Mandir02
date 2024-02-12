@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Temple Webpage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .mySlides {
+            display: none
+        }
+        body {
+            font-family: "Lato", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .w3-bar-item,
+        .w3-container .w3-button,
+        #w3-container .w3-button,
+        .w3-top .w3-bar-item,
+        .w3-dropdown-content a {
+            font-size: 17px;
+        }
+
+        .w3-bar {
+            position: relative;
+        }
+
+        #navDemo {
+            overflow: hidden;
+            display: none;
+            background-color: #333;
+            position: absolute;
+            width: 100%;
+        }
+
+        #navDemo a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+
+        #navDemo a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .w3-show {
+            display: block !important;
+        }
+        
+        body {
+          font-family: "Lato", sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+        
+        .small-hr {
+            height: 1px; /* Adjust the height to make it smaller or larger */
+            background-color: #0e0d0d; /* Set the color of the line */
+            border: none; /* Remove default border */
+            margin: 1px 0; /* Adjust margin to control spacing around the line */
+        }
+        .big-hr {
+            height: 1px; /* Adjust the height to make it smaller or larger */
+            background-color: #0e0d0d; /* Set the color of the line */
+            border: none; /* Remove default border */
+            margin: 40px 0; /* Adjust margin to control spacing around the line */
+        }
+        /* Gallery Section Styles */
+        #gallery {
+            background-color: transparent; /* Remove the black background */
+            color: #080808;
+            padding: 100px 20px;
+            width: 100vw;
+        }
+
+        #imageGallery {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start; /* Align items to the top */
+            flex-wrap: wrap;
+        }
+
+        #imageGallery .w3-third {
+            width: calc(25% - 16px);
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        #imageGallery img {
+            width: 100%; /* Set width to 100% to make images responsive */
+            height: 200px; /* Set a fixed height for uniformity */
+            object-fit: cover; /* Ensure images cover the specified height */
+            border: 1px solid #fff;
+            border-radius: 8px;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #imageGallery img:hover {
+            opacity: 0.5;
+        }
+        /* Add this style for the white space div */
+        .section-space {
+            height: 10px; /* Adjust the height to create the desired space */
+            background-color: white; /* Set the background color to white */
+        }
+        /* View More Button Styles */
+        .w3-center button {
+          background-color: #000;
+          color: #fff;
+          border: 2px solid #fff;
+          padding: 10px 20px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .w3-center button:hover {
+          background-color: #fff;
+          color: #000;
+        }
+        /* Volunteer Section Styles */
+        #volunteer {
+            background-color: #000; /* Set background color for the entire screen */
+            color: #fff; /* Set text color for the entire screen */
+            padding: 100px 20px; /* Adjust top and bottom padding to create space for content */
+            text-align: center; /* Center the content */
+            position: relative; /* Add relative positioning */
+        }
+        #volunteer p {
+            font-size: 18px; /* Set font size for paragraphs in the volunteer section */
+        }
+        #volunteer .w3-container {
+            background-color: #fff; /* Change background color for the volunteer container to white */
+            padding: 20px; /* Change padding for the volunteer container */
+            border-radius: 8px; /* Add border radius for a rounded look */
+            max-width: 800px; /* Set a maximum width for better readability */
+            margin: 0 auto; /* Center the volunteer container horizontally */
+            position: relative; /* Add relative positioning */
+            z-index: 1; /* Set a higher z-index to appear above the black background */
+        }
+        #volunteer button {
+            background-color: #000; /* Set button background color for the volunteer section */
+            color: #fff; /* Set button text color for the volunteer section */
+            border: 2px solid #fff; /* Set button border color for the volunteer section */
+        }
+
+        #volunteer button:hover {
+            background-color: #fff; /* Change button background color on hover */
+            color: #000; /* Change button text color on hover */
+        }
+        /* Add space between Gallery and Volunteer sections */
+        #gallery {
+            margin-bottom: 40px; /* Adjust the bottom margin as needed */
+        }
+        /* Add space between Volunteer and Online Services sections */
+        #volunteer {
+            margin-bottom: 40px; /* Adjust the bottom margin as needed */
+        }
+        /* Add space between Contact and Location sections */
+        #contact {
+            margin-bottom: 0px; /* Adjust the bottom margin as needed */
+        }
+        /* You can also adjust the margin of the Location section if necessary */
+        #location {
+            margin-bottom: 20px; /* Adjust the bottom margin as needed */
+        }
+        @media screen and (max-width: 600px) {
+            .w3-bar-item,
+            .w3-container .w3-button,
+            #w3-container .w3-button,
+            .w3-top .w3-bar-item,
+            .w3-dropdown-content a {
+                font-size: 14px;
+            }
+
+            .w3-bar {
+                padding: 8px 16px;
+            }
+
+            #navDemo {
+                margin-top: 30px;
+            }
+
+            .w3-padding-64 {
+                padding: 32px 16px;
+            }
+
+            .w3-padding-32 {
+                padding: 16px;
+            }
+        }
+        #calender iframe {
+            width: 100%; /* Make the calendar iframe take up 100% of the container width */
+            height: 600px; /* Set a fixed height for the calendar to maintain aspect ratio */
+        }
+
+        @media screen and (max-width: 600px) {
+            #calender iframe {
+                height: 400px; /* Adjust height for smaller screens */
+            }
+        }
+        #calender {
+            background-color: #f7f7f7; /* Light background color */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+            }
+
+        #calender h2 {
+            color: #151212; /* Dark text color */
+        }
+
+        #calender iframe {
+            width: 100%;
+            height: 600px;
+            border: 2px solid #ddd; /* Light border */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+        }
+
+        @media screen and (max-width: 600px) {
+            #calender iframe {
+                height: 400px;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+                href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i
+                class="fa fa-bars"></i></a>
+            <a href="#home" class="w3-bar-item w3-button w3-padding-large">Home</a>
+            <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Gallery</a>
+            <a href="#upcoming-events" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Upcoming events</a>
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="scrollToCalendar()">Calendar</a> 
+            <!--<a href="#volunteer" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Volunteer</a>-->
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+            <a href="#location" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Location</a>
+        </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
+        style="margin-top:46px">
+        <a href="#gallery" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Gallery</a>
+        <a href="#upcoming-events" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Upcoming events</a>
+        <a href="#calender" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Calender</a>    
+        <!--<a href="#volunteer" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Volunteer</a>-->
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
+        <a href="#location" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Location</a>   
+    </div>
+    <div class="section-space"></div>
+    <div class="w3-black" id="home">
+        <hr class="big-hr">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+            <h2 class="w3-wide w3-center">TEMPLE NAME</h2>
+        </div>
+    </div>
+    <!-- Page content -->
+    <div id="home" class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+        <h2 class="w3-wide">Swamiye Sharanam Ayyappa</h2>
+        <p class="w3-opacity"><i>Click on the button below to know more about Ayyappa</i></p>
+        <button class="w3-button w3-black" onclick="openHistoryPage()">History</button>
+    </div>
+<hr class="small-hr">
+<hr class="small-hr">
+    <!-- Gallery Section -->
+<div id="gallery" class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide w3-center">GALLERY</h2>
+    <div class="w3-content" style="max-width:800px; margin-top: 20px; position: relative;">
+        <!-- Manual Slideshow Images with Arrows -->
+        <div class="mySlides w3-display-container w3-center">
+            <img src="Gallery01.jpg" style="width:80%">
+            <!-- Add left arrow -->
+            <a class="w3-display-left w3-btn" onclick="plusSlides(-1)">&#10094;</a>
+            <!-- Add right arrow -->
+            <a class="w3-display-right w3-btn" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="mySlides w3-display-container w3-center">
+            <img src="Gallery002.jpg" style="width:80%">
+            <a class="w3-display-left w3-btn" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="w3-display-right w3-btn" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="mySlides w3-display-container w3-center">
+            <img src="Gallery003.jpg" style="width:80%">
+            <a class="w3-display-left w3-btn" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="w3-display-right w3-btn" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="mySlides w3-display-container w3-center">
+            <img src="Gallery004.jpg" style="width:80%">
+            <a class="w3-display-left w3-btn" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="w3-display-right w3-btn" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="mySlides w3-display-container w3-center">
+            <img src="Gallery005.jpg" style="width:80%">
+            <a class="w3-display-left w3-btn" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="w3-display-right w3-btn" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="mySlides w3-display-container w3-center">
+            <img src="Gallery006.jpg" style="width:80%">
+            <a class="w3-display-left w3-btn" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="w3-display-right w3-btn" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <div class="w3-center">
+        <a href="gallery.html">
+            <button class="w3-button w3-black">View More Images</button>
+        </a>
+    </div>
+</div>
+<hr>
+    <!--<hr class="big-hr">-->
+    <!--volunteer section-->
+
+    <!--Online services code-->
+
+    <!--generic ticket model-->
+
+    <!--script-->
+     
+<hr class="small-hr">
+    <!-- Upcoming Events Section -->
+<div class="w3-black" id="upcoming-events">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <h2 class="w3-wide w3-center">UPCOMING EVENTS</h2>
+        <p class="w3-opacity w3-center"><i>Check out our upcoming events</i></p><br>
+
+        <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-container w3-white">
+                    <p><b>Event 1</b></p>
+                    <p>Date: MM/DD/YYYY</p>
+                    <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-container w3-white">
+                    <p><b>Event 2</b></p>
+                    <p>Date: MM/DD/YYYY</p>
+                    <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-container w3-white">
+                    <p><b>Event 3</b></p>
+                    <p>Date: MM/DD/YYYY</p>
+                    <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="small-hr">
+<div id="calender" class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px">
+    <h2 class="w3-wide w3-center">CALENDAR</h2>
+    <iframe src="https://calendar.google.com/calendar/embed?src=7367d80811980fe3d386ebe827d7bfabc6eb91a02ac95888eff5687e77347e67%40group.calendar.google.com&ctz=Asia%2FKolkata" style="border: 0" frameborder="0" scrolling="no"></iframe>
+</div>
+<hr class="small-hr">
+    <!-- Contact Section -->
+    <div id="contact" class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+            <h1 class="w3-wide w3-center">CONTACT</h1>
+            <p class="w3-opacity w3-center"><i>Drop a note</i></p>
+            <div class="w3-row w3-padding-32">
+                <div class="w3-col m6 w3-large w3-margin-bottom">
+                    <i class="fa fa-map-marker" style="width:30px"></i> Chicago, US<br>
+                    <i class="fa fa-phone" style="width:30px"></i> Phone: +00 151515<br>
+                    <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+                </div>
+                <div class="w3-col m6">
+                    <form action="/action_page.php" target="_blank">
+                        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                            </div>
+                            <div class="w3-half">
+                                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                            </div>
+                        </div>
+                        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                        <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Page Content -->
+    <hr class="small-hr">
+    <!-- Location Section -->
+    <div id="location" class="w3-container w3-content w3-padding-64 w3-center" style="max-width:800px">
+        <h1><b>LOCATION</b></h1>
+        <p><b>ADDRESS:</b></p>
+        <p>Google maps link</p> 
+        <img src="location.png" class="w3-image w3-greyscale-min" style="width:100%">
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge"></footer>
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <!--<p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>-->
+    </footer>
+    <script>
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function myFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace("w3-show", "");
+            }
+        }
+        function goToLocation() {
+            // Set the desired location URL
+            var locationURL = 'https://maps.app.goo.gl/NaN8EiDyWK8FtTHd9'; // Replace with your actual location URL    
+            // Redirect to the specified location
+            window.location.href = locationURL;
+        }
+        function openTempleInfoModal() {
+            document.getElementById('mandir-info').style.display = 'block';
+        }
+    
+        function hideMandirInfo() {
+            document.getElementById('mandir-info').style.display = 'none';
+        }
+        function openHistoryPage() {
+            window.location.href = 'history.html';
+        }
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        function scrollToCalendar() {
+            var calendarSection = document.getElementById("calender");
+        
+            window.scrollTo({
+                top: calendarSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
